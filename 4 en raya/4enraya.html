@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 en raya</title>
+    <link rel="stylesheet" href="estilo.css">
+    
+</head>
+
+<body>
+    <script>
+
+    var juego_activo=false;
+    var jugador_activo=0;
+    var tablero=[];
+    var color_jugador=[];
+    color_jugador[1]="red";
+    color_jugador[2]="blue";
+        
+    function dibujar(){
+        for(col=0;col<=6;col++){
+            for(row=0;row<=5;row++){
+                document.getElementById('col'+j).innerHTML
+            }
+        }
+        
+        
+        
+    }
+        
+        
+        document.write(crearTabla());
+        
+        function crearTabla(){
+            var arrayCol=[];
+            document.write("<div id='tabla'>");
+                for(var i=1; i<=7; i++){
+                    document.write("<div id='columna"+i+"' class='columna'>");
+                        for(var j=1; j<=6; j++){
+                            document.write("<div id='col"+j+"' class='col'>");
+                            document.write();
+                            document.write("</div>");
+                        }
+                    document.write("</div>");
+                }
+            document.write("</div>");
+            
+        }//function crear tabla
+        
+    </script>
+  <!--  <div id="tabla">
+        <div id="f1" class="col">
+            <div class="insertar">
+                <div class="celdaInvisible"></div>
+            </div>
+            <div id="f11" class="celda"></div>
+            <div id="f12" class="celda"></div>
+            <div id="f13" class="celda"></div>
+            <div id="f14" class="celda"></div>
+            <div id="f15" class="celda"></div>
+            <div id="f16" class="celda"></div>
+            
+        </div>
+        <div id="f2" class="col">
+            <div class="insertar">
+                <div class="celdaInvisible"></div>
+            </div>
+            <div id="f21" class="celda"></div>
+            <div id="f22" class="celda"></div>
+            <div id="f23" class="celda"></div>
+            <div id="f24" class="celda"></div>
+            <div id="f25" class="celda"></div>
+            <div id="f26" class="celda"></div>
+          
+        </div>
+
+        <div id="f3" class="col">
+            <div class="insertar">
+                <div class="celdaInvisible"></div>
+            </div>
+            <div id="f31" class="celda"></div>
+            <div id="f32" class="celda"></div>
+            <div id="f33" class="celda"></div>
+            <div id="f34" class="celda"></div>
+            <div id="f35" class="celda"></div>
+            <div id="f36" class="celda"></div>
+           
+        </div>
+        <div id="f4" class="col">
+            <div class="insertar">
+                <div class="celdaInvisible"></div>
+            </div>
+            <div id="f41" class="celda"></div>
+            <div id="f42" class="celda"></div>
+            <div id="f43" class="celda"></div>
+            <div id="f44" class="celda"></div>
+            <div id="f45" class="celda"></div>
+            <div id="f46" class="celda"></div>
+           
+        </div>
+
+        <div id="f5" class="col">
+            <div class="insertar">
+                <div class="celdaInvisible"></div>
+            </div>
+            <div id="f51" class="celda"></div>
+            <div id="f52" class="celda"></div>
+            <div id="f53" class="celda"></div>
+            <div id="f54" class="celda"></div>
+            <div id="f55" class="celda"></div>
+            <div id="f56" class="celda"></div>
+            
+        </div>
+        <div id="f6" class="col">
+            <div class="insertar">
+                <div class="celdaInvisible"></div>
+            </div>
+            <div id="f61" class="celda"></div>
+            <div id="f62" class="celda"></div>
+            <div id="f63" class="celda"></div>
+            <div id="f64" class="celda"></div>
+            <div id="f65" class="celda"></div>
+            <div id="f66" class="celda"></div>
+            
+        </div>
+        <div id="f7" class="col">
+            <div class="insertar">
+                <div class="celdaInvisible"></div>
+            </div>
+            <div id="f71" class="celda"></div>
+            <div id="f72" class="celda"></div>
+            <div id="f73" class="celda"></div>
+            <div id="f74" class="celda"></div>
+            <div id="f75" class="celda"></div>
+            <div id="f76" class="celda"></div>
+           
+        </div>
+    </div> -->
+</body>
+</html>

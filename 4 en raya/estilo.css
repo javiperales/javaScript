@@ -1,0 +1,65 @@
+/*FONTS*/
+
+
+/* entypo */
+
+
+
+body {
+  padding: 1em 3em;
+  background: white;
+    text-align: center;
+}
+
+
+/*#tabla {
+  border: 1px solid #000651;
+  display: inline-block;
+  padding: 2px 0px 10px;
+  background: #5637B9;
+  width: 558px;
+}
+
+
+.col {
+  display: inline-block;
+}
+
+
+.celda {
+  border: 1px solid #000651;
+  border: 35px;
+  border-radius: 31px;
+  width: 70px;
+  height: 70px;
+  background: white;
+  margin: 2px;
+}*/
+
+.columna{
+    width: 100px;
+    background-color: coral;
+    float:left;
+}
+
+.col{
+    border-radius:100%;
+    width:50px;
+    height: 50px;
+    border: solid black;
+    clear:both;
+    background-color: beige;
+    
+}
+
+celda..ficha_roja {
+  background: #9D1111;
+  border: 1px solid #000651;
+  margin: 2px;
+}
+
+celda.ficha_amarilla {
+  background: #00CC24;
+  border: 1px solid yellow;
+  margin: 2px;
+}

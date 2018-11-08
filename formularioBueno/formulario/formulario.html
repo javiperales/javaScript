@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    
+    h1{
+        text-align: center;
+        color:blueviolet;
+        font-style: italic;
+    }    
+    
+    .formulario{
+        border: 5px dotted;
+        text-align: center;
+        width: 300px;
+        align-content: center;
+        margin:auto;
+        
+        
+    }
+    
+</style>
+
+<body>
+    <script>
+        function comprobarEmail(){
+            
+            var correo=document.getElementById("mail2").value;
+           
+            if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)^/.test(correo))){
+                if(correo.split("@")[1]=="hotmail.com" || correo.split("@")[1]=="yahoo.es" || correo.length==0){
+                alert("correo incorrecto");
+                return false;
+                  
+                }else{
+                    alert("correo correcto");
+                    return true;
+                }
+                //^(?!.*hotmail.com | .*yahoo.es)
+            }
+        
+        
+        }
+        
+        function comprobarPais(){
+             var pais=document.getElementById("pais");
+          
+            
+            if(pais.value!="España" && pais.value!="Italia" || pais.length==0){
+
+                  alert("solo son correctos España o Italia");
+                return false;
+            }else{
+                alert("pais correcto");
+                return true;
+              
+            }
+            
+        }
+        
+        function comprobarDni(){
+            var dni=document.getElementById("DNI").value;
+            if(!(/^\d{8}[A-H J-L N-W Y-Z a-h j-l n-w y-z]$/.test(dni))/*otra opcion es [^XMI]*/) {
+                alert("dni incorrecto");
+                return false;
+                }else{
+                    alert("dni correcto");
+                    return true;
+                }       
+        }
+        
+    
+        function validar(){
+            comprobarPais();
+            comprobarEmail();
+             comprobarDni();
+            }
+           
+        
+    </script>
+
+    <h1>formulario</h1>
+    
+    <div class="formulario">
+    <form action="" method="" onsubmit="validar()">
+        <label>pais de residencia<input id="pais" type="text"></label>
+        <br>
+        <br>
+        <label>E-mail<input type="email" id="mail2"></label>
+        <br>
+        <br>
+        <label>DNI <input type="text" id="DNI" maxlength="9"></label>
+        <br>
+        <br>
+        <input type="submit" value="enviar">
+    </form>
+    </div>
+
+</body>
+
+</html>
