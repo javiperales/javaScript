@@ -17,18 +17,27 @@
             });
         });
         function esconder(num) {
-            $("#c" + num).hide(1000, function() {
+            $("#c" + num).hide("fast", function() {
                 num++;
-                esconder(num);
-                 mostrar(1);
+                
+                $("c"+num).hide("fast", esconder(num));
+               // esconder(num);
+                
             });
+             mostrar(1);
         }
+        
+        
+ 
         function mostrar(num) {
-            $("#c" + num).show(2000, function() {
+            $("#c" + num).show("slow", function() {
                 num++;
                 mostrar(num);
             })
         }
+        
+
+        
     </script>
     <style>
         /* Se ha tomado la idea estética de:
