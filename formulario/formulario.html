@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script>
+        function comprobarEmail(){
+            
+            var correo=document.getElementById("mail2").value;
+            
+            if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)^(?!.*hotmail.com | .*yahoo.es)/.test(correo))){
+                return false;
+                //^(?!.*hotmail.com | .*yahoo.es)
+            }
+        
+        }
+        
+        function comprobarPais(){
+             var pais=document.getElementById("pais");
+            var correcto=1;
+            
+            if( !pais.equals("España") || !pais.equals("Italia")){
+                correcto=1;
+                  alert("solo son correctos España o Italia");
+            }else{
+                correcto=0;
+              
+            }
+            
+        }
+        
+        function comprobarDni(){
+            var dni=document.getElementById("DNI").value;
+            if( !(/^\d{8}[A-Z][^XMI]$/.test(dni)) ) {
+                return false;
+                }       
+        }
+    
+        function validar(){
+            comprobarDni();
+            comprobarEmail();
+            comprobarPais();    
+        }
+        validar();
+    </script>
+    
+    <h1>formulario</h1>
+    <form action="resultado1.php" method="" onsubmit="validar()">
+        <label>pais de residencia<input id="pais" type="text"></label>
+        <br>
+        <br>
+        <label>E-mail<input type="email" id="mail2"></label>
+        <br>
+        <br>
+        <label>DNI <input type="text" id="DNI" maxlength="9"></label>
+
+        <br>
+        <br>
+        <input type="submit" value="enviar">
+
+
+
+    </form>
+
+
+</body>
+
+</html>
