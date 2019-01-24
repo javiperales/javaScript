@@ -16,15 +16,13 @@
                
             });
         });
-
         function esconder(num) {
-            $("#c" + num).hide("fast", function() {
+            $("#c" + num).hide(1000, function() {
                 num++;
                 esconder(num);
                  mostrar(1);
             });
         }
-
         function mostrar(num) {
             $("#c" + num).show(2000, function() {
                 num++;
@@ -161,6 +159,8 @@
                 <i class="fa fa-bug fa-4x" aria-hidden="true"></i>
             </div>
         </div>
+        
+        
     
 
     </div>
