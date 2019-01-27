@@ -1,0 +1,46 @@
+{
+ "cupcakes" : [
+   {
+     "ID" : "c1",
+     "ruta" : "./cupcakes.jpg",
+    "nombre": "Cupcake de café",
+    "precio": 5,
+    "categorias":[
+      "dulces", "salados"
+    ],
+    "descripcion": "Un cupcake delicioso",
+     "etiquetas": [
+       "café", "desayuno"
+     ]
+   },
+   {
+     "ID" : "c2",
+     "ruta" : "./cupcakes.jpg",
+    "nombre": "cupcake salado",
+    "precio": 2,
+    "categorias":[
+      "dulces", "amargo"
+    ],
+    "descripcion": "Un cupcake delicioso",
+     "etiquetas": [
+       "café", "mermelada"
+     ]
+   },
+   {
+     "ID" : "c3",
+     "ruta" : "./cupcakes.jpg",
+    "nombre": "cupcake salado y dulce",
+    "precio": 3,
+    "categorias":[
+      "agridulce", "salados"
+    ],
+    "descripcion": "Un cupcake delicioso",
+     "etiquetas": [
+       "café", "vegano"
+     ]
+   } 
+   
+ ] 
+  
+}
+
