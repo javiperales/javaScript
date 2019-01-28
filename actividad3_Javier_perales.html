@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            crearTubo();
+            crecer();
+            disminuir();
+        });
+        
+        function crecer() {
+            $('.tubo').mouseover(function() {
+                $(this).stop().animate({
+                    height: '300px'
+                }, 'fast', 'linear');
+            });
+        }
+
+
+
+        function disminuir() {
+            $('.tubo').mouseover(function() {
+                $(this).stop().animate({
+                    height: '300px'
+                }, 'slow', 'linear');
+            });
+
+        }
+
+
+        function crearTubo() {
+
+            for (let i = 0; i < 30; i++) {
+                $('#cont').append('<div class ="tubo"> </div>');
+                }
+            }
+
+
+    </script>
+
+
+    <style>
+        #cont {
+            position: relative;
+            margin: auto;
+            background-color: black;
+            width: 600px;
+            height: 600px;
+
+        }
+
+        .tubo {
+            float: left;
+            display: inline-block;
+            bottom: 0px;
+            background-color: pink;
+            height: 200px;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="cont">
+
+<!--
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+        <div class="tubo">1
+        </div>
+-->
+
+
+    </div>
+
+
+</body>
+</html>
