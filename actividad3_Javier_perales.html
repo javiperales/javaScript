@@ -8,12 +8,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             crearTubo();
-            crecer();
             disminuir();
+
         });
-        
+
+        function crearTubo() {
+
+            for (let i = 0; i < 30; i++) {
+                $('#cont').append('<div class ="tubo"> </div>');
+            }
+        }
+
         function crecer() {
             $('.tubo').mouseover(function() {
                 $(this).stop().animate({
@@ -25,23 +32,20 @@
 
 
         function disminuir() {
-            $('.tubo').mouseover(function() {
-                $(this).stop().animate({
-                    height: '300px'
-                }, 'slow', 'linear');
-            });
+            $('.tubo').mouseover(
+                function() {
+                    $(this).stop().animate({
+                        height: '600px'
+                    }, 'fast', 'linear');
+                },
+                function() {
+                    $(this).stop().animate({
+                        height: '300px'
+                    }, 'slow', 'linear');
+                }
+            );
 
         }
-
-
-        function crearTubo() {
-
-            for (let i = 0; i < 30; i++) {
-                $('#cont').append('<div class ="tubo"> </div>');
-                }
-            }
-
-
     </script>
 
 
@@ -71,7 +75,7 @@
 
     <div id="cont">
 
-<!--
+        <!--
         <div class="tubo">1
         </div>
         <div class="tubo">1
