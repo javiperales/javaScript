@@ -10,9 +10,12 @@
     <script>
         $(document).ready(function() {
             crearTubo();
-            disminuir();
-
+            crecer();
+           // aumentar();
+            //disminuir();
         });
+
+
 
         function crearTubo() {
 
@@ -21,31 +24,22 @@
             }
         }
 
+
         function crecer() {
-            $('.tubo').mouseover(function() {
+            $(".tubo").hover(function() {
                 $(this).stop().animate({
-                    height: '300px'
+                    height: '400px'
                 }, 'fast', 'linear');
+            }, function() {
+                $(this).stop().animate({
+                    height: '200px'
+                }, 'fast', 'linear');
+
             });
         }
-
-
-
-        function disminuir() {
-            $('.tubo').mouseover(
-                function() {
-                    $(this).stop().animate({
-                        height: '600px'
-                    }, 'fast', 'linear');
-                },
-                function() {
-                    $(this).stop().animate({
-                        height: '300px'
-                    }, 'slow', 'linear');
-                }
-            );
-
-        }
+        
+       
+        
     </script>
 
 
