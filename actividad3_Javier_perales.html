@@ -11,8 +11,6 @@
         $(document).ready(function() {
             crearTubo();
             crecer();
-           // aumentar();
-            //disminuir();
         });
 
 
@@ -28,12 +26,12 @@
         function crecer() {
             $(".tubo").hover(function() {
                 $(this).stop().animate({
-                    height: '400px'
-                }, 'fast', 'linear');
+                    height: '600px'
+                }, 100, 'linear');
             }, function() {
                 $(this).stop().animate({
-                    height: '200px'
-                }, 'fast', 'linear');
+                    height: '300px'
+                }, 2000, 'linear');
 
             });
         }
@@ -58,7 +56,7 @@
             display: inline-block;
             bottom: 0px;
             background-color: pink;
-            height: 200px;
+            height: 300px;
             width: 20px;
         }
     </style>
@@ -69,40 +67,7 @@
 
     <div id="cont">
 
-        <!--
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
-        <div class="tubo">1
-        </div>
--->
+      
 
 
     </div>
