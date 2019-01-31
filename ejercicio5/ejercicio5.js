@@ -18,6 +18,8 @@ function verDatos() {
             objeto = JSON.parse(r);
             mostrarDatos();
             verOpciones();
+            verFiltradoMacroArea();
+           
         }
     }
 } //ver datos
@@ -51,9 +53,6 @@ function mostrarDatos() {
 
         cuerpoTabla.append(tr);
 
-
-
-
     }
 
 } //mostrarDatos
@@ -66,8 +65,6 @@ function verOpciones(){
         arrayOcpciones.push(dato.MACROAREA);
     }
 
-    console.log(arrayOcpciones);
-
     opcFiltrado = arrayOcpciones.unique();
 
     for(datoOpc of opcFiltrado) {
@@ -75,4 +72,53 @@ function verOpciones(){
         opc.append(option);
         option.innerHTML = datoOpc;
     }
+}
+
+function verFiltradoMacroArea(){
+    var select = document.getElementById("opciones");
+    
+    select.addEventListener('change', function(){
+        var macro = this.options[select.selectedIndex];
+       // console.log(macro.value);
+        var macroFiltrada = objeto.datos.filter(a => a.MACROAREA.includes(macro.value));
+        document.getElementById("respuesta").innerHTML =" ";
+       verMacroAreaFiltrada(macroFiltrada);
+    })
+    
+}//verfiltradomacroarea
+
+function verMacroAreaFiltrada(macroFiltrada){
+    var suma =0;
+    var cuerpoTabla = document.getElementById("respuesta");
+    for (dato of macroFiltrada) {
+        var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+        var td4 = document.createElement("td");
+        var td5 = document.createElement("td");
+        var td6 = document.createElement("td");
+        tr.append(td1);
+        tr.append(td2);
+        tr.append(td3);
+        tr.append(td4);
+        tr.append(td5);
+        tr.append(td6);
+        td1.innerHTML = dato.MACROAREA;
+        td2.innerHTML = dato.AÑO;
+        td3.innerHTML = dato.EDAD;
+        td4.innerHTML = dato.NUMERO_PDI;
+        suma += dato.NUMERO_PDI; 
+        td5.innerHTML = dato.CATEGORIA_CUERPO_ESCALA;
+        td6.innerHTML = dato.SEXO;
+
+        cuerpoTabla.append(tr);
+        
+    }
+    var tr2 = document.createElement("tr");
+    var td3 = document.createElement("td");
+    tr2.append(td3);
+    td3.innerHTML = suma;
+    cuerpoTabla.append(tr2);
+    
 }
