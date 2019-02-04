@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<stytle>
+    ul, li {
+    list-style:none;
+    }
+    .nav > li {
+    float:left;
+    padding:0px 10px;
+    }
+
+    .nav li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+    }
+    .nav li:hover > ul {
+    display:block !important;
+    }
+</stytle>
+
+<body>
+    <script>
+        
+        $(document).ready(function(){
+           var menu = $.getJSON("actividad4.json");
+            
+            function (dato){
+                objeto=dato;
+                crearMenu(menu);
+                crearSubMenu(menu);
+            }
+            
+        });
+        function crearMenu(menu) {
+            console.log(menu)
+            for (var i = 0; i < menu.length; i++) {
+                //pintamos los menus y aca menu le damos de class el menu[i].cMenu,
+                // para utilizarlo en el momento de agregar el submenu
+                var className = menu[i].cMenu.replace(" ", "");
+                $(".nav").append("<li   class=" + className + ">" + menu[i].cMenu + "</li>")
+            }
+        }
+
+        function crearSubMenu(menu) {
+            for (var i = 0; i < menu.length; i++) {
+                //obtenemos la class que le dimos en la function pasada para 
+                //agregar el  submenu
+                var className = menu[i].cMenu.replace(" ", "");
+                if (i == 0) {
+                    //agregamos un <ul> el cual va hacer el contenedor del submenu
+                    $("." + className).append('<ul class="subNav"></ul>')
+                }
+                //y por ultimo agregamos los item al submenu
+                $("." + className + " ul").append("<li   class=" + className + ">" + menu[i].cSubMenu + "</li>")
+            }
+        }
+    </script>
+    <div id="header">
+        <ul class="nav">
+        </ul>
+    </div>
+</body>
+
+</html>
