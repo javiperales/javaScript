@@ -11,31 +11,44 @@ var cargarAjax = function () {
 
     }).done(function (respuesta) {
 
-        //console.log(respuesta);
+       
         pintarDatos(respuesta);
-        console.log("final Lectura ajax");
+       
     }).fail(function () {
         console.log("Fallo");
     }).always(function () {
-        //document.write("<p>Finalizando</p>");
+       
     });
 }
 var pintarDatos = function (respuesta) {
     var menu = document.getElementById("menu");
     var ul1 = document.createElement("ul");
+    
     for (let m of respuesta.menu) {
-        document.write("<ul>")
+        if(comprobarHijos(m.hijos)){
+            document.write("<ul>")
         document.write("<a href='#'>" + m.denominacion + "</a>" + "<br>")
         document.write("</ul>")
-        for (let h of m.hijos) {
-
-            document.write("<li>")
-            document.write(h.denominacion);
-            document.write(h.url);
-            document.write("</li>")
-
         }
+        
+        
+//        for (let h of m.hijos) {
+//
+//            document.write("<li>")
+//            document.write(h.denominacion+"<br>");
+//            document.write("</li>")
+//            
+//
+//        }
 
     }
 
+}
+
+var comprobarHijos = function(hijo){
+    if(hijo=!undefined){
+        return true;
+    }else{
+        return false;
+    }
 }
