@@ -3,7 +3,7 @@ $(function () {
     cargarAjax();
     // console.log("Final");
 });
-var cadena=""; 
+var cadena = "";
 
 var cargarAjax = function () {
     $.ajax({
@@ -22,24 +22,21 @@ var cargarAjax = function () {
     });
 }
 var pintarDatos = function (menu) {
-     cadena+="<ul>";
+    cadena += "<ul>";
+   
     for (let m of menu) {
-       cadena+="<li><a href='#'>"+ m.denominacion+ "</a></li>"
+         mostrar();
+        cadena += "<li class='list'><a href='#'>" + m.denominacion + "</a></li>"
         if (comprobarHijos(m.hijos)) {
             pintarDatos(m.hijos)
-            
+
         }
-        
-
-
-       
-
-    }//for
-    cadena+="</ul>"
+    } //for
+    cadena += "</ul>"
     $("#menu").html(cadena)
-    
 
-}//pintardatos
+
+} //pintardatos
 
 var comprobarHijos = function (hijo) {
     if (hijo != undefined) {
@@ -49,3 +46,8 @@ var comprobarHijos = function (hijo) {
     }
 }
 
+var mostrar = function () {
+    $(".list").click(function () {
+        $(this).hide("fast");
+    })
+}
