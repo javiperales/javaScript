@@ -21,6 +21,7 @@ var cargarAjax = function () {
     });
 }
 var pintarDatos = function (menu) {
+
     //cadena += "<ul>";
     var main = document.getElementById("menu");
     let ul = document.createElement("ul");
@@ -63,6 +64,23 @@ var pintarDatos = function (menu) {
 } //pintardatos
 
 
+    cadena += "<ul>";
+   
+    for (let m of menu) {
+         mostrar();
+        cadena += "<li class='list'><a href='#'>" + m.denominacion + "</a></li>"
+        if (comprobarHijos(m.hijos)) {
+            pintarDatos(m.hijos)
+
+        }
+    } //for
+    cadena += "</ul>"
+    $("#menu").html(cadena)
+
+
+} //pintardatos
+
+
 var comprobarHijos = function (hijo) {
     if (hijo != undefined) {
         return true;
@@ -71,9 +89,16 @@ var comprobarHijos = function (hijo) {
     }
 }
 
+
 var desplegar = function () {
 
     $(".list").click(function () {
         $(".list ul").toggle("slow");
     });
+
+var mostrar = function () {
+    $(".list").click(function () {
+        $(this).hide("fast");
+    })
+
 }
