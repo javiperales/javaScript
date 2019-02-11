@@ -3,7 +3,7 @@ $(function () {
     cargarAjax();
     // console.log("Final");
 });
-var cadena=""; 
+var cadena = "";
 
 var cargarAjax = function () {
     $.ajax({
@@ -12,8 +12,7 @@ var cargarAjax = function () {
 
     }).done(function (respuesta) {
 
-
-        pintarDatos(respuesta.menu);
+        pintarDatos(respuesta.menu, null);
 
     }).fail(function () {
         console.log("Fallo");
@@ -22,24 +21,47 @@ var cargarAjax = function () {
     });
 }
 var pintarDatos = function (menu) {
-     cadena+="<ul>";
+    //cadena += "<ul>";
+    var main = document.getElementById("menu");
+    let ul = document.createElement("ul");
+
+    let li = null;
+
     for (let m of menu) {
-       cadena+="<li><a href='#'>"+ m.denominacion+ "</a></li>"
-        if (comprobarHijos(m.hijos)) {
-            pintarDatos(m.hijos)
-            
-        }
+        li = document.createElement("li");
+        li.setAttribute("class", "list li"+m.denominacion.replace(" ", "-"));
+        let a = document.createElement("a");
+        a.setAttribute("href", "#");
+        a.setAttribute("class", "link");
+
+        a.innerHTML = m.denominacion.replace(" ", "-");
+        li.append(a);
         
+        if (comprobarHijos(m.hijos)) {
+            let ulli = pintarDatos(m.hijos);
+            ulli.setAttribute("class","ul"+ m.denominacion.replace(" ", "-"));
+            li.appendChild(ulli);
+            
+             $(li).click(function () {
+            $("ul"+ m.denominacion.replace(" ", "-")).toggle("fast");
+                 console.log("clicar");
 
+        });
 
+        } else {
+            // ul.append(li);
+            main.append(ul);
+        }
        
 
-    }//for
-    cadena+="</ul>"
-    $("#menu").html(cadena)
-    
+        ul.appendChild(li);
+        console.log("entro en for");
+        main.append(ul);
 
-}//pintardatos
+    } //for
+    return ul;
+} //pintardatos
+
 
 var comprobarHijos = function (hijo) {
     if (hijo != undefined) {
@@ -49,3 +71,9 @@ var comprobarHijos = function (hijo) {
     }
 }
 
+var desplegar = function () {
+
+    $(".list").click(function () {
+        $(".list ul").toggle("slow");
+    });
+}
