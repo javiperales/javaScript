@@ -44,7 +44,7 @@ var pintarDatos = function (menu) {
             li.appendChild(ulli);
             
              $(li).click(function () {
-            $("ul"+ m.denominacion.replace(" ", "-")).toggle("fast");
+            $(ulli).toggle("fast");
                  console.log("clicar");
 
         });
