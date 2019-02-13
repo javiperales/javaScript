@@ -1,6 +1,7 @@
 $(function () {
     console.log("entrada");
     cargarAjax();
+    
     // console.log("Final");
 });
 var cadena = "";
@@ -13,7 +14,11 @@ var cargarAjax = function () {
     }).done(function (respuesta) {
 
         pintarDatos(respuesta.menu, null);
-        desplegar();
+       // desplegar();
+        $(" button ").click( (e) => {
+            //console.log($($(e.target).parent().get(0)).children("ul")); 
+            $( $(e.target).parent().get(0) ).children("ul").toggle();
+        });
 
     }).fail(function () {
         console.log("Fallo");
@@ -23,7 +28,6 @@ var cargarAjax = function () {
 }
 var pintarDatos = function (menu) {
 
-    //cadena += "<ul>";
     var main = document.getElementById("menu");
     let ul = document.createElement("ul");
 
@@ -31,15 +35,17 @@ var pintarDatos = function (menu) {
     
 
     for (let m of menu) {
+                
         li = document.createElement("li");
-        button = document.createElement("button");
+        let button = document.createElement("button");
         button.setAttribute("class" , "click"+m.denominacion.replace(" ", "-"));
         button.setAttribute("value", "->");
         button.innerHTML="->";
         li.setAttribute("class", "list li" + m.denominacion.replace(" ", "-"));
         let a = document.createElement("a");
-        //a.setAttribute("href", "#");
-        //a.setAttribute("class", "link");
+        a.setAttribute("href", m.url);
+        m.hasOwnProperty("target") ? a.setAttribute("target", m.target): null;
+        a.setAttribute("class", "link");
 
         a.innerHTML = m.denominacion.replace(" ", "-");
       
@@ -50,23 +56,24 @@ var pintarDatos = function (menu) {
             ulli.setAttribute("class", "ul" + m.denominacion.replace(" ", "-"));
             li.appendChild(ulli);
 
-            $(li).click(function () {
-                $(ulli).toggle("fast");
-                console.log("clicar");
-
-            });
+           
 
         } else {
             // ul.append(li);
             main.append(ul);
         }
-
-
+        
+        
+        
         ul.appendChild(li);
         console.log("entro en for");
         main.append(ul);
 
     } //for
+    
+    
+
+    
     return ul;
 } //pintardatos
 
@@ -80,13 +87,5 @@ var comprobarHijos = function (hijo) {
 }
 
 
-var desplegar = function () {
-
-        $(".click"+m.denominacion.replace(" ", "-")).click(function () {
-            $(this).children().toggle("slow", function(){
-                $(this).stop();
-            });
-        });
-}
 
 
