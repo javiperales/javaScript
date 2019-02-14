@@ -4,7 +4,7 @@ $(function () {
 });
 var cargarAjax = function () {
     $.ajax({
-        url: "actividad4.json",
+        url: "actividad4.1.json",
         dataType: "json"
 
     }).done(function (respuesta) {
@@ -24,62 +24,59 @@ var cargarAjax = function () {
 }
 var pintarDatos = function (menu) {
 
-    var main = $("#menu")
-    console.log(main)
-    var cad = "<ul>"
-    var li = ""
-    var button =""
-    for (m of menu) {
-        cad += "<li>"+m.denominacion+"<button>"+'->'+"</button></li>"
-        if(comprobarHijos(m.hijos)){
+//    var main = $("#menu")
+//    console.log(main)
+//    var cad = "<ul>"
+//    var li = ""
+//    var button =""
+//    for (m of menu) {
+//        cad += "<li>"+m.denominacion+"<button>"+'->'+"</button></li>"
+//        
+//        if(comprobarHijos(m.hijos)){
+//            cad += "<li>hijo</li>"
+//        }
+//       
+//    }
+//    cad += "</ul>"
+//    main.append(cad)
+
+     var main = document.getElementById("menu");
+
+     let ul = document.createElement("ul");
+    let li = null;
+    for (let m of menu) {
+
+        li = document.createElement("li");
+        let button = document.createElement("button");
+        button.setAttribute("class", "click" + m.denominacion.replace(" ", "-"));
+        button.setAttribute("value", "->");
+        button.innerHTML = "->";
+        li.setAttribute("class", "list li" + m.denominacion.replace(" ", "-"));
+        let a = document.createElement("a");
+        a.setAttribute("href", m.url);
+        m.hasOwnProperty("target") ? a.setAttribute("target", m.target) : null;
+        a.setAttribute("class", "link");
+
+        a.innerHTML = m.denominacion.replace(" ", "-");
+
+        li.append(a);
+        li.append(button)
+        if (comprobarHijos(m.hijos)) {
             let ulli = pintarDatos(m.hijos);
+            ulli.setAttribute("class", "ul" + m.denominacion.replace(" ", "-"));
             li.appendChild(ulli);
-        }else{
-            ul.append(li);
+
+        } else {
+             ul.append(li);
             main.append(ul);
         }
-       
-    }
-    cad += "</ul>"
-    main.append(cad)
 
-    // var main = document.getElementById("menu");
+        ul.appendChild(li);
+        console.log("entro en for");
+        main.append(ul);
 
-    // let ul = document.createElement("ul");
-    //let li = null;
-    //for (let m of menu) {
-
-       // li = document.createElement("li");
-        //let button = document.createElement("button");
-        //button.setAttribute("class", "click" + m.denominacion.replace(" ", "-"));
-        //button.setAttribute("value", "->");
-        //button.innerHTML = "->";
-        //li.setAttribute("class", "list li" + m.denominacion.replace(" ", "-"));
-        //let a = document.createElement("a");
-        //a.setAttribute("href", m.url);
-        //m.hasOwnProperty("target") ? a.setAttribute("target", m.target) : null;
-        //a.setAttribute("class", "link");
-
-        //a.innerHTML = m.denominacion.replace(" ", "-");
-
-        //li.append(a);
-       // li.append(button)
-       // if (comprobarHijos(m.hijos)) {
-           // let ulli = pintarDatos(m.hijos);
-           // ulli.setAttribute("class", "ul" + m.denominacion.replace(" ", "-"));
-           // li.appendChild(ulli);
-
-      //  } else {
-            // ul.append(li);
-         //   main.append(ul);
-       // }
-
-        //ul.appendChild(li);
-       // console.log("entro en for");
-        //main.append(ul);
-
-    //} //for
-    //return ul;
+    } //for
+    return ul;
 } //pintardatos
 
 
