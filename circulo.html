@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    #container {
+        margin: auto;
+        //background-color: yellow;
+        width: 60%;
+        height: 100%;
+    }
+
+    #espacio {
+        width: 550px;
+        height: 450px;
+        float: left;
+        background-color: skyblue;
+        //border: 2px solid red;
+    }
+
+    .bolica {
+        float: left;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: black;
+        margin: 2px;
+
+    }
+
+    .bolicaroja {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <script>
+        $(function() {
+            $("#espacio").on("click", ".bolica", jugar);
+            //$(".bolica").on("click",jugar)
+        });
+        
+        var red = $(this).parent().append('<div class="bolica bolicaroja"></bolica>')
+        var black = $(this).parent().append('<div class="bolica"></bolica>')
+        var jugar = function() {
+            if ($(this).hasClass("bolicaroja")) {
+                $(this).parent().append('<div class="bolica bolicaroja"></bolica>')
+                $(this).parent().append('<div class="bolica bolicaroja"></bolica>')
+                $(this).parent().append('<div class="bolica bolicaroja"></bolica>')
+                $(this).fadeOut()
+            }
+            else {
+                var black = $(this).parent().append('<div class="bolica"></bolica>')
+                var black = $(this).parent().append('<div class="bolica"></bolica>')
+                $(this).fadeOut()
+            }
+
+
+        }
+    </script>
+    <div id="container">
+        <div id="espacio">
+            <div class="bolica">
+            </div>
+            <div class="bolica">
+            </div>
+            <div class="bolica bolicaroja">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
