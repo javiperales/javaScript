@@ -53,8 +53,7 @@
             //$(".bolica").on("click",jugar)
         });
         
-        var red = $(this).parent().append('<div class="bolica bolicaroja"></bolica>')
-        var black = $(this).parent().append('<div class="bolica"></bolica>')
+       
         var jugar = function() {
             if ($(this).hasClass("bolicaroja")) {
                 $(this).parent().append('<div class="bolica bolicaroja"></bolica>')
@@ -67,9 +66,9 @@
                 var black = $(this).parent().append('<div class="bolica"></bolica>')
                 $(this).fadeOut()
             }
-
-
         }
+        
+        
     </script>
     <div id="container">
         <div id="espacio">

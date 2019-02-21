@@ -21,6 +21,7 @@ $(function(){
  	}
 
  )}
+ //cargar json
 
  function pintar(respuesta){
 	 console.log(respuesta)
@@ -29,8 +30,9 @@ $(function(){
 	cadena += "<ul>"
 
  	for (variable of respuesta) {
- 			cadena += "<li> <a> " + variable.CENTRO + " " +conta  + "</a> "
+ 			cadena += "<li> <a> " + variable.CENTRO + " " +conta  + " " + variable.CURSO_ACADEMICO+"</a> "
  			mySet.add(variable.CENTRO);
+            
  			
  			conta += 1
  		cadena += "</li>"
@@ -52,6 +54,7 @@ function click(){
 $("#b1").on("change",function(){
 	cadena = " "
 	 $("#contenedor").html(cadena);
+    
 
 	 
 	 
@@ -78,7 +81,7 @@ $("#b2").click(function(){
  			mySet.add(variable.CENTRO);
  			
  			conta += 1
- 		cadena += "</li>"
+		cadena += "</li>"
  	}
 	//alert("HOLIWIS")
 	$("#contenedor").append(cadena);
