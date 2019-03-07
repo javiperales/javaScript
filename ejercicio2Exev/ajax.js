@@ -3,7 +3,7 @@ $(function () {
     cargarAjax("https://codepen.io/chabisoriano/pen/gEaKJQ.js",false);
     console.log("Final");
 });
-
+let datos;
 var cargarAjax = function (web ,cacheada) {
     $.ajax({
         url: web,
@@ -39,13 +39,12 @@ var cargarAjax2 = function(link){
 }
 
 function mostrarDatos(obj){
-    for(objeto in obj){// recorro objeto
-        for(color of obj[objeto]){//recorro array
+    datos=obj;
+    for(objeto in datos){// recorro objeto
+        for(color of datos[objeto]){//recorro array
             for( propiedad in color){//recorro objeto dentro de array
                 $("#container").append("<strong>"+propiedad+"</strong>"+"<strong>"+ color[propiedad]+"</strong><br>")
             }
         }
     }
-    
-    
 }//mostrarDatos
