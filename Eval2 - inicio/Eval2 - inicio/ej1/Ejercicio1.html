@@ -1,0 +1,123 @@
+<html>
+	<head>
+	<title>Ejercicio 1</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+		table{
+			text-align:center;
+			border: 2px solid black;
+		}
+		td{
+			padding: 20px;
+		}
+		html,body{
+		height: 100%;
+		width:  100%;
+		background-color: lightblue;
+		}
+		#contenedor{
+		margin: auto;
+		width: 440px;
+		}
+		.cubo{
+		margin:50%;
+		width: 100px;
+		float: left;
+		background-color: red;
+		margin: 2px;
+		text-align: center;
+		
+		}
+		td {
+			background-color: red;
+		}
+		
+		div {
+			margin-top: 50%;
+		}
+
+	</style>
+	
+	</head>
+	<body>
+		<div id="contenedor">
+		<table id="tabla" border=1 cellspacing=0 cellpadding=2> 
+			
+		</table>
+		</div>
+		<script>
+		var juego = ['',''];
+		var clicks = 0;
+		
+		function cargarTabla(){
+			var table = document.getElementById("tabla");
+			var X = ['perro', 'gato', 'tigre', 'perro', 'cabra', 'oso', 'oso', 'gato', 'tigre', 'leon', 'lobo', 'cabra', 'lobo', 'leon', 'murcielago', 'murcielago']
+			var cont = [0,0,0,0,0,0,0,0];
+			for(var x=0;x<4; x++){
+				var tr = document.createElement('tr');
+				for (var y=0;y<4;y++){
+					var td = document.createElement('td');
+					var div = document.createElement('div');
+					div.setAttribute("style", 'opacity: 0.0; color: white; padding-top: 25%; padding-bottom:25%;');
+					div.setAttribute("class", 'noCorrecto cubo');
+					var palabra = "";
+					var numero;
+					
+					while (palabra == ""){
+						numero = obtenerNumero();
+						palabra = palabras[numero];
+					}
+					cont[numero] = cont[numero]+1;
+					if(cont[numero] == 2){
+						palabras[numero] = "";
+					}
+					div.innerHTML = palabra;
+					$(div).click(function() {
+						if($(this).attr('class') == 'noCorrecto cubo'){
+							console.log($(this).attr('class'));
+							$(this).animate({opacity: '1.0'});
+							//console.log($(this).parent());
+							//$(this).parent().css("background-color", "lightblue");
+							$(this).attr('class', 'seleccionado cubo');
+							juego[clicks] = this;
+							clicks++;
+							console.log(juego);
+							if(clicks == 2){
+								var divs = document.getElementsByClassName("seleccionado cubo");
+								if(juego[0].innerHTML == juego[1].innerHTML){
+										divs[0].setAttribute("class", 'correcto cubo');
+										this.setAttribute("class", 'correcto cubo');
+										console.log("correcto");
+									
+								}else{
+										for (var z in juego){
+												console.log(divs[z]);
+												$(juego[z]).animate({opacity: '0.0'});
+												//$(juego[z]).parent().css("background-color", "red");
+												$(juego[z]).attr('class', 'noCorrecto cubo')
+										}
+										$(this).animate({opacity: '0.0'});
+										$(this).attr('class', 'noCorrecto cubo');
+										console.log("incorrecto");
+									
+								}
+								clicks = 0;
+								juego = ['',''];
+							}
+						}
+					});
+					td.appendChild(div);
+					tr.appendChild(td);
+				}
+				table.appendChild(tr);
+			}
+		}
+		
+		
+		function obtenerNumero(){
+			return Math.floor(Math.random() * (8 - 0) + 0);
+		}
+	cargarTabla();		
+	</script>
+	</body>
+</html>
