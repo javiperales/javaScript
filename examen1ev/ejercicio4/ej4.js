@@ -33,47 +33,41 @@ function añadirElementos() {
     ArrayEmail.push(email);
     ArrayBoton.push((Arraynombre.length - 1));
     pintar();
-    console.log(nombre)
+
+    // console.log(nombre)
 }
 
 function borrar(id) {
-//    Arraynombre.splice(id, 1);
-//    ArrayApellido.splice(id, 1);
-//    ArrayEmail.splice(id, 1);
-//    ArrayBoton.splice(id, 1);
-    
-    Arraynombre.shift(id);
-    ArrayApellido.shift(id);
-    ArrayEmail.shift(id);
-    ArrayBoton.shift(id);
-    
+    Arraynombre.splice(id, 1); //selecciono el elemento con el id y 1 es para borrar(0 para añadir)
+    ArrayApellido.splice(id, 1);
+    ArrayEmail.splice(id, 1);
+    ArrayBoton.splice(id, 1);
+
     pintar(); //pinta el vacio
-
-
 }
 
 function pintar() {
     var print = "";
-    console.log("donde estas")
     for (var i = 0; i < ArrayApellido.length; i++) {
         var nombreM = Arraynombre[i];
         var apellidoM = ArrayApellido[i];
         var emailM = ArrayEmail[i];
         var botonM = ArrayBoton[i];
-        
-         div = "<div class='contenedor' id="+botonM+">";
+
+        div = "<div class='contenedor' id=" + botonM + ">";
 
 
-        var nombrePrint = "<p><strong>nombre:</strong>" + nombreM + "</p>";
+        var nombrePrint = "<p><strong>nombre:<strong>" + nombreM + "</p>";
         var appellidoPrint = "<p><strong>apellido:</strong>" + apellidoM + "</p>";
         var emailPrint = "<p><strong>email:</strong>" + emailM + "</p>";
-        //        var botonPrint = '<button onclick=borrar( '+ botonM + ')id='+ botonM + '>eliminar</button>';
 
-        var botonPrint = "<button onclick=borrar(" + botonM + ") id=" + botonM + ">Eliminar</button>";
-        
+
+        var botonPrint = "<button onclick=borrar(" + i + ") id=" + botonM + ">Eliminar</button>";
+
+
+
         div += nombrePrint + appellidoPrint + emailPrint + botonPrint + "</div><br><hr>";
         print += div;
-
     }
     //console.log("entra en imprimir");
     document.getElementById("resultados").innerHTML = print;

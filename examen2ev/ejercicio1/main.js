@@ -22,7 +22,7 @@ function crearCuadros() {
     $(".cubo").click(function () {
         let objeto;
         objeto = $(this).children();
-        $(this).children().toggle();
+        $(this).children().show();
         //console.log($(this).children().text());
         cartas[click] = objeto;
         click++;

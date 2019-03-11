@@ -16,5 +16,5 @@ function numeroprimo(num){//funcion para comprobar los numeros primos que hay en
             return false; //si el numero es par me devuelve falso
         }
     }
-    return num; // me devuelve un numero distinto a 1(primo)
+    return num;//me devuelve el numero
 }

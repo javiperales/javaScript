@@ -7,9 +7,6 @@ let X=[];
 
 $(function () {
     cargarAjax("./datos2.json", false);
-    
-
-   
 })
 
 function cargarAjax(web, cacheada) {
