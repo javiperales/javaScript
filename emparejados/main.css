@@ -1,0 +1,67 @@
+$ancho_cas: 100px;
+$numero_col: 4;
+$margen: 5px;
+$borde: 2px;
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#tablero {
+    top: 0px;
+    background-color: green;
+    width: 464px; 
+    height: 464px;
+    
+}
+
+    img {
+        opacity: 0;
+        opacity: 0;
+        transition: opacity 0.5s;
+        width: $ancho_cas;
+        height: $ancho_cas;
+        height: 100px;
+        width: 100px;
+    }
+
+    &:hover {
+        background-color: orange;
+    }
+
+
+#victoria {
+    display: none;
+    padding: 20px;
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: ($ancho_cas+2*$margen)*$numero_col;
+    top: 0;
+    left: 0;
+    z-index: 4000;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+    p {
+        display: block;
+        //background-color: pink;
+        font-size: 3em;
+        font-weight: bold;
+        color: white;
+        opacity: 1;
+        padding-top: 1.4*$ancho_cas;
+    }
+div{
+    float:left;
+}
+
+.cuadro{
+    height: 100px;
+    width: 100px;
+    border: solid 3px black;
+    margin: 5px;
+}
