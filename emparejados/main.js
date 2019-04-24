@@ -33,14 +33,14 @@ let crearTablero = function () {
     let contenedor = document.getElementById('tablero');
     let imagenes = [];
     for (let i = 0; i < 8; i++) {
-        imagenes[i] = '<div id="' + i + '" class="cuadro"><img src="' + cartas[i] +
+        imagenes[imagenes.length] = '<div id="' + i + '" class="cuadro"><img src="' + cartas[i] +
+            '" onclick="clickar(this)"></div>';
+        
+        imagenes[imagenes.length] = '<div id="' + i + '" class="cuadro"><img src="' + cartas[i] +
             '" onclick="clickar(this)"></div>';
 
     }
-    for (let i = 8, k = 0; i < 16; i++, k++) {
-        imagenes[i] = '<div id="' + i + '" class="cuadro"><img src="' + cartas[k] +
-            '" onclick="clickar(this)"></div>';
-    }
+    
     imagenes = imagenes.sort(function () {
         return Math.random() - 0.5
     });

@@ -1,0 +1,61 @@
+{
+    "gatos" : [
+      {
+        "nombre" : "rodolfo",
+        "ruta" : "./persa.jpg",
+       "raza": " persa",
+       "peso": 2,
+       "sexo":"macho",
+       "castrado": "si"
+        
+      },
+
+      {
+        "nombre" : "abogato",
+        "ruta" : "./comun.jpg",
+       "raza": " comun",
+       "preso": 5,
+       "sexo":"macho",
+       "castrado": "no"
+      },
+      {
+        "nombre" : "agata",
+        "ruta" : "./egipcio.jpg",
+       "raza": "egipcio",
+       "preso": 1,
+       "sexo":"hembra",
+       "castrado": "si"
+      },    
+    
+      {
+        "nombre" : "agata",
+        "ruta" : "./siberiano.jpg",
+       "raza": "siberiano",
+       "preso": 1,
+       "sexo":"hembra",
+       "castrado": "si"
+      },    
+    
+      {
+        "nombre" : "simba",
+        "ruta" : "./burmilla.jpg",
+       "raza": "burmilla",
+       "preso": 5,
+       "sexo":"macho",
+       "castrado": "no"
+      },
+
+      {
+        "nombre" : "agata",
+        "ruta" : "./siberiano.jpg",
+       "raza": "siberiano",
+       "preso": 1,
+       "sexo":"hembra",
+       "castrado": "si"
+      }
+
+    ]
+     
+   }
+   
+   
