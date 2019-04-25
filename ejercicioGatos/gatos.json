@@ -28,7 +28,7 @@
       },    
     
       {
-        "nombre" : "agata",
+        "nombre" : "rosalia",
         "ruta" : "./siberiano.jpg",
        "raza": "siberiano",
        "preso": 1,
@@ -46,7 +46,7 @@
       },
 
       {
-        "nombre" : "agata",
+        "nombre" : "luci",
         "ruta" : "./siberiano.jpg",
        "raza": "siberiano",
        "preso": 1,
