@@ -28,6 +28,8 @@ function cargarAjax() {
             rellenarSelects();
             filtrarPorSexo();
             detectarEnter();
+            filtrarPorCastrado();
+            filtrarPorRaza();
         }
     }
 
@@ -137,11 +139,96 @@ function filtrarPorSexo(){
     });
 }
 
-function detectarEnter(e){
-    var enter= addEventListener("keypress", function(e){
-        if(e.keyCode==13){
-            var nombre = document.getElementsByTagName("input")[0].value;
+function filtrarPorCastrado(){
+    var resultado = document.getElementById("contenedor");
+    var opcionSeleccionada = document.getElementById("castrado");
+    opcionSeleccionada.addEventListener("change", function(){
+        var castrado = this.options[opcionSeleccionada.selectedIndex];
+            if(objeto.gatos.filter(a => a.castrado.includes(castrado.value))){
+                objeto = (objeto.gatos.filter(a=>a.castrado.includes(castrado.value)))
+            }
+            console.log(objeto);
+            document.getElementById("contenedor").innerHTML = "";
+
+            for(dato of objeto){
+                var ul = document.createElement("ul");
+                for(gato in dato){
+                   var li = document.createElement("li");
+                   if(gato=="ruta"){
+                    var imagen = document.createElement("img");
+                    imagen.src= dato[objeto];
+                    li.append(imagen);
+                   }else{
+                       li.innerHTML=dato[gato];
+                   }
+                   ul.append(li);
+                }
+                resultado.append(ul);
+            }
            
+    });
+}
+
+function filtrarPorRaza(){
+    var resultado = document.getElementById("contenedor");
+    var opcionSeleccionada = document.getElementById("raza");
+    opcionSeleccionada.addEventListener("change", function(){
+        var raza = this.options[opcionSeleccionada.selectedIndex];
+            if(objeto.gatos.filter(a => a.raza.includes(raza.value))){
+                objeto = (objeto.gatos.filter(a=>a.raza.includes(raza.value)))
+            }
+            console.log(objeto);
+            document.getElementById("contenedor").innerHTML = "";
+
+            for(dato of objeto){
+                var ul = document.createElement("ul");
+                for(gato in dato){
+                   var li = document.createElement("li");
+                   if(gato=="ruta"){
+                    var imagen = document.createElement("img");
+                    imagen.src= dato[objeto];
+                    li.append(imagen);
+                   }else{
+                       li.innerHTML=dato[gato];
+                   }
+                   ul.append(li);
+                }
+                resultado.append(ul);
+            }
+           
+    });
+}
+
+function detectarEnter(e) {
+    var resultado = document.getElementById("contenedor");
+    var enter = addEventListener("keypress",
+        function (e) {
+        if(e.keyCode == 13){
+            e.preventDefault();//detiene la ejecucion de reinicio o mas o emnos
+            
+            var nombre=document.getElementsByTagName("input")[0].value;//obtengo el valor introducidso en el input
+            if (objeto.gatos.filter(a => a.nombre.includes(nombre))) {
+                var objetoAux = (objeto.gatos.filter(a => a.nombre.includes(nombre)))
+            }
+            console.log(objeto)
+            document.getElementById("contenedor").innerHTML = "";
+            for (dato of objetoAux) {
+                var ul = document.createElement("ul");
+                for (gato in dato) {
+                    var li = document.createElement("li");
+                    li.classList.add('list-group-item');
+                    if (gato == "ruta") {
+                        var imagen = document.createElement("img");
+                        imagen.src = dato[gato];
+                        li.append(imagen);
+                    } else {
+                        li.innerHTML = dato[gato];
+
+                    }
+                    ul.append(li)
+                }
+                resultado.append(ul)
+            }
         }
-    })
+        })
 }
