@@ -1,0 +1,28 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+#contenedor {
+    margin: auto;
+    width: 440px;
+    background-color: black;
+}
+
+.cubo {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-color: lightpink;
+    margin: 2px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.foto {
+    opacity: 0.3;
+    width: 98px;
+    height: 98px;
+}
