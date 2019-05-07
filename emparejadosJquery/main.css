@@ -22,7 +22,13 @@ body {
 }
 
 .foto {
-    opacity: 0.3;
+    opacity: 0.5;
+    width: 98px;
+    height: 98px;
+}
+
+.mostrar{
+    opacity:1;
     width: 98px;
     height: 98px;
 }

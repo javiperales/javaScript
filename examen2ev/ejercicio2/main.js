@@ -41,7 +41,7 @@ function crearCuadros() {
         click++;
         console.log(cartas)
 
-        if (click == 2) {
+        if (click == 3) {
             if (cartas[0].text() == cartas[1].text()) {
                 for (m of cartas) {
                     m.show();

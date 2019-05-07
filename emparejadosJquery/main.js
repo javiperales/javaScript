@@ -11,6 +11,7 @@ let carta1;
 let carta2;
 let idCarta1="";
 let idCarta2="";
+let idCarta3="";
 
 function cargarAjax(web, cacheada) {
     $.ajax({
@@ -46,56 +47,54 @@ var crearTablero = function(){
     }
     
     $('#contenedor').append(cubos);
-    click();
+    $('#contenedor').on("click", ".foto", jugar);
 }
 
-var click = function(){
-    $('.foto').each(function(){
-        $(this).click(function(){
-            jugar();
-            
-        });
-    });
-}
 
 var jugar = function(){
    var parejasTotales=animales.length/2;
+    console.log('click foto' + this.id);
+    if(turno==1){
+        if(idCarta1!=""){
+            $("#" + idCarta1).removeClass("mostrar");
+            $("#"+ idCarta1).addClass("foto");
+            $("#" + idCarta2).removeClass("mostrar");
+            $("#"+ idCarta2).addClass("foto");
+     /*        $("#" + idCarta3).removeClass("mostrar");
+            $("#"+ idCarta3).addClass("foto"); */
 
-   if(turno==1){
-    if (idCarta1 != "") {//si las cartas estan dadas la vuelta
-       $('idcarta1').fadeOut();
-       $('idcarta2').fadeOut();
+        }
+        turno++;
+        aux=this.src;
+        idCarta1=this.id;
+
+        $("#" + idCarta1).removeClass("foto");
+        $("#"+ idCarta1).addClass("mostrar");
+    
         
+
+    }else{
+        if(this.id!=idCarta1){
+            idCarta2=this.id;
+            $("#" + idCarta2).removeClass("foto");
+            $("#"+ idCarta2).addClass("mostrar");
+            
+
+
+
+            if(this.src==aux){
+                contadorParejas++;
+
+                idCarta2="";
+                idCarta1="";
+
+                if(contadorParejas==parejasTotales){
+                    alert("has ganado");
+                }
+            }else{
+                idCarta2=this.idM
+            }
+            turno=1;
+        }
     }
-
-    turno++;
-        aux = this.src;
-        idCarta1 = this.id;
-        $('idcrta1').show();
-       
-   }else {//si estamos en el segundo turno
-    if (this.id != idCarta1) {
-            $(this).show();
-        if (this.src == aux) {//si las src/urls son iguales son pareja
-            //this.onclick = null;
-            //document.getElementById(idCarta2).onclick = null;
-
-            contadorParejas++;
-          
-            idCarta2 = "";
-            idCarta1 = "";
-
-            //COMPROBAMOS VICTORIA E IMPRIMIMOS CONTADOR DE PAREJAS
-            $('#contadorParejas').append(contenedor);
-
-            if (contadorParejas == parejasTotal) {
-                alert('HAS GANADO')
-            }//fin
-
-        } else {//si no son pareja
-            idCarta2 = this.id;
-        }//vuelta a empezar 
-        turno = 1;
-    }
-}
 }
