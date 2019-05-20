@@ -1,0 +1,40 @@
+.contacto{
+    width: 300px;
+    height: 80px;
+    background-color: aliceblue;
+    text-align: center;
+    border: 3px solid black;
+    margin: 10px;
+}
+
+#contenedor{
+    width: 1000px;
+    height: 1000px;
+    background-color: white;
+}
+
+.parrafo{
+    color:black;
+    font-size: 10px;
+}
+
+.capa{
+    width: 300px;
+    height: 80px;
+    background-color: aqua;
+    opacity: 0.5;
+    border: 3px solid black;
+    margin: 10px;
+}
+
+.boton{
+    float: right;
+    margin-bottom: -50px;
+}
+
+.boton2{
+    float: top;
+    margin-left: 150px;
+    
+
+}

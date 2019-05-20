@@ -1,0 +1,24 @@
+{
+    "contactos": [{
+            "nombre": "rodolfo",
+            "telefono": "123456789",
+            "email": " ajajajaja@kajajaja.com"
+        },
+        {
+            "nombre": "mariola",
+            "telefono": "123456789",
+            "email": " ssaaqd@kaddaja.com"
+        },
+        {
+            "nombre": "peralesss",
+            "telefono": "9183827442",
+            "email": " peralesss@lala.es"
+        },
+        {
+            "nombre": "javissssssss",
+            "telefono": "18492596",
+            "email": " javi1javi2@javis.es"
+        }
+    ]
+
+}
