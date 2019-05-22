@@ -7,10 +7,11 @@
     margin: 10px;
 }
 
+
 #contenedor{
-    width: 1000px;
-    height: 1000px;
-    background-color: white;
+    width: 400px;
+    height: 400px;
+    background-color: black;
 }
 
 .parrafo{

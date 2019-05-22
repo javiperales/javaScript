@@ -66,24 +66,24 @@ function crearContacto() {
       $(".boton").hide(); 
   }
 
-  animar();
+$(".contacto").on("click", animar);
+ 
+
+
 }
 
 function animar(){
-    $(".contacto").click(function(){
-        $(this).find(".parrafo").animate({
-            marginLeft: '-3px' 
+       $(".contacto").find(".boton").hide();
+       $(".contacto").find(".boton2").hide();
+
+        $(this).animate({
+            "marginLeft": '-30px' 
           },1000, 'swing')
-    
+
          $(this).removeClass("contacto").addClass("capa");
         $(this).find(".boton").slideDown(); 
         $(this).find(".boton2").slideDown(); 
-        /* if($(this).hasClass('capa')){
-            desanimar();
-        }else{
-            animar();
-        } */
-      })  
+
 }
 
 function desanimar(){

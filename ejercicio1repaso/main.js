@@ -1,4 +1,4 @@
-var abcd=["abcdefghijklmnopqrsuvwxyz"];
+var abcd=["abcdefghijklmnopqrstuvwxyz"];
 palabra=prompt("escribe");
 
 window.onload = function(){
@@ -7,8 +7,11 @@ window.onload = function(){
 
 function comprobar(palabra, abcd){
    for(c of abcd){
-       if(palabra<c){
-         
-       }
+      let i = palabra.indexOf(c);
+        if(i<=0){
+            let y = new RegExp(c,'gi');
+            let x = palabra.match(y);
+            console.log(x);
+        }
+      }
    }
-}
