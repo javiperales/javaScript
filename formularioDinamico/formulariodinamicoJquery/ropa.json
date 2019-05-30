@@ -1,0 +1,110 @@
+{
+    "ropa": [
+        {
+          "marca":"stradivarius",
+          "modelo":"manga larga",
+          "made in":"taiwan",
+          "talla":38,
+          "tipo":"camiseta",
+          "precio":30
+        },
+        {
+          "marca":"pull and bear",
+          "modelo":"manga corta",
+          "made in":"thailandia",
+          "talla":36,
+          "tipo":"falda",
+          "precio":350
+        },
+        {
+          "marca":"stradivarius",
+          "modelo":"corta",
+          "made in":"taiwan",
+          "talla":32,
+          "tipo":"falda",
+          "precio":40
+        },
+        {
+          "marca":"pull and bear",
+          "modelo":"larga",
+          "made in":"thailandia",
+          "talla":40,
+          "tipo":"falda",
+          "precio":30
+        },
+        {
+          "marca":"zara",
+          "modelo":"manga larga",
+          "made in":"taiwan",
+          "talla":36,
+          "tipo":"camiseta",
+          "precio":36
+        },
+        {
+          "marca":"zara",
+          "modelo":"largo",
+          "made in":"thailandia",
+          "talla":44,
+          "tipo":"pantalon",
+          "precio":50
+        },
+        {
+          "marca":"pull and bear",
+          "modelo":"manga larga",
+          "made in":"taiwan",
+          "talla":38,
+          "tipo":"camiseta",
+          "precio":30
+        },
+        {
+          "marca":"lefties",
+          "modelo":"corto",
+          "made in":"france",
+          "talla":38,
+          "tipo":"vestido",
+          "precio":20
+        },
+        {
+          "marca":"lefties",
+          "modelo":"largo",
+          "made in":"france",
+          "talla":38,
+          "tipo":"vestido",
+          "precio":30
+        },
+        {
+          "marca":"h&m",
+          "modelo":"corto",
+          "made in":"españa",
+          "talla":38,
+          "tipo":"mono",
+          "precio":25
+        },
+        {
+          "marca":"h&m",
+          "modelo":"largo",
+          "made in":"españa",
+          "talla":48,
+          "tipo":"mono",
+          "precio":20
+        },
+        {
+          "marca":"mango",
+          "modelo":"corto",
+          "made in":"inglaterra",
+          "talla":46,
+          "tipo":"pantalon",
+          "precio":20
+        },
+        {
+          "marca":"mango",
+          "modelo":"corto",
+          "made in":"inglaterra",
+          "talla":36,
+          "tipo":"vestido",
+          "precio":15
+        }
+      
+      
+      ]
+  }
