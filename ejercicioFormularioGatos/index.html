@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="main.js" async defer></script>
+
+        <div id="menu">
+            <h3>MENÚ</h3>
+            <form id="f1" name="f1" onsubmit="return false">
+              <input class="formulario" type="text" name="nombre" id="nombre" placeholder="Nombre de busqueda..."><br><br>
+              EDAD<br>
+              <select id="edad1" name="edad1">
+                <option value="entre">Entre</option>
+              
+              </select>
+              <select id="edad2" name="edad2">
+                <option value="hasta">Hasta</option>
+              </select><br><br>
+              <input type="text" class="formulario" name="peso" id="peso" placeholder="peso del gato"><br>
+              RAZA<br>
+              <select id="raza" name="raza">
+                <option value="todas" selected>Todas</option>
+                </select><br><br>
+              SEXO:<br>
+                <input type="radio" value="hembra" name="sexo">HEMBRA</input>
+                <input type="radio" value="macho"  name="sexo">MACHO</input>
+              <br><br>
+          CASTRADO:<br>
+                <input type="radio" name="castrado" value="si">SI</input>
+                <input type="radio" name="castrado" value="no">NO</input>
+          <br><br>
+          VACUNADO:<br>
+          <input type="radio" name="vacunado" value="si">SI</input>
+          <input type="radio" name="vacunado" value="no">NO</input>
+          <br><br>
+            <input type="button" value="Borrar filtros" name="borrar">
+            </form>
+            </div>
+          <div id="contenedor">
+            
+          </div>
+          <div id="bloqueador">
+            <div id="centrador">
+              <img class="imgGrande" src="">
+            </div>
+          </div>
+    </body>
+</html>

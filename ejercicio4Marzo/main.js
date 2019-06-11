@@ -50,7 +50,7 @@ function pintar(){
 
     }
     document.getElementById("resultados").innerHTML = imprimir;   
-
+creatGatos();
 }
 
 function borrar(id){
@@ -61,6 +61,5 @@ function borrar(id){
     Arrayboton.splice(id,1);
     pintar();
 }
-
 
 
