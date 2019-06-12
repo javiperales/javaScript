@@ -1,0 +1,11 @@
+/*  $(function() {
+     console.clear()
+    crearTablero()
+    asignarEventos() 
+    console.log("esto va")
+})  */
+ 
+window.onload = function(){
+    console.log("esto va con js normal")
+}
+

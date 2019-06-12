@@ -49,12 +49,23 @@ let suma=0;
 let sumaEdad=0;
 
 let sexo1;
+bouncer(datos.gatos);
 
-datos.gatos.reduce((a,b)=>{
-    (b.raza=="egipcio")? sexo1=true : sexo1=false
-},true);
+/* datos.gatos.filter((a)=>{
+    (a.sexo=="macho")? sexo1=true : sexo1=false
+},true); */
 
-
-console.log(sexo1);
+/* datos.gatos.filter(function(x) { 
+    console.log(x === true)
+    if(x.sexo=="macho" !== false) {
+        return true;
+    }
+ }); */
 
 } 
+
+function bouncer(arr) {
+    return arr.filter(function(x) { console.log(x.raza=="persa" /* || x.sexo=="hembra" */ === true)
+       return /* x.sexo=="hembra" || */ x.raza=="persa" !== false;
+    });
+}
