@@ -1,0 +1,64 @@
+{
+    "gatos" : [
+      {
+        "nombre" : "rodolfo",
+        "img": ["http://lorempixel.com/400/400/cats/1/", "http://lorempixel.com/400/400/cats/5/"],
+       "raza": " persa",
+       "edad": 2,
+       "sexo":"macho",
+       "castrado": "si",
+        "id":1
+      },
+
+      {
+        "nombre" : "abogato",
+         "img": ["http://lorempixel.com/400/400/cats/1/", "http://lorempixel.com/400/400/cats/5/"],
+       "raza": " comun",
+       "edad": 5,
+       "sexo":"macho",
+       "castrado": "no",
+        "id":2
+      },
+      {
+        "nombre" : "agata",
+        "img": ["http://lorempixel.com/400/400/cats/1/", "http://lorempixel.com/400/400/cats/5/"],
+       "raza": "egipcio",
+       "edad": 1,
+       "sexo":"hembra",
+       "castrado": "si",
+        "id":3
+      },
+
+      {
+        "nombre" : "antonia",
+        "img": ["http://lorempixel.com/400/400/cats/1/", "http://lorempixel.com/400/400/cats/5/"],
+       "raza": "siberiano",
+       "edad": 1,
+       "sexo":"hembra",
+       "castrado": "si",
+        "id":4
+      },
+
+      {
+        "nombre" : "simba",
+        "img": ["http://lorempixel.com/400/400/cats/1/", "http://lorempixel.com/400/400/cats/5/"],
+       "raza": "burmilla",
+       "edad": 5,
+       "sexo":"hembra",
+       "castrado": "no",
+        "id":5
+      },
+
+      {
+        "nombre" : "agata",
+       "img": ["http://lorempixel.com/400/400/cats/1/", "http://lorempixel.com/400/400/cats/5/"],
+       "raza": "siberiano",
+       "edad": 1,
+       "sexo":"hembra",
+       "castrado": "si",
+        "id":6
+      }
+
+    ]
+
+   }

@@ -19,29 +19,56 @@ var crearTablero = function(){
 
 
 var asignarEventos =function(){
-    
-    for(c of $(".casillas")){
-        $(c).click(function(){
-            if($(".casillas").hasClass("blancas")){
-                    $(".casillas").each(function(){
-                        if($(".casillas").hasClass("blancas")){
-                           $(this).addClass("blancas");
-                            $(this).removeClass("negras");
-                        }else{
-                            $(this).addClass("azules")
-                            $(this).removeClass("blancas");
-                            $(this).removeClass("rojas");
-                        }
-                    })
-                
-            }else if($(".casillas".hasClass("negras"))){
-                $(".casillas").each(function(){
-                    if($(".casillas").hasClass("negras")){
-                        $(this).addClass("rojas");
-                        $(this).removeClass("negras");
-                    }
-                })
-            }
-        })
-    }
+    console.log('en function 2');
+    $('.blancas').on("click", blancas);
+     $('.negras').on("click", negras);
+   
 }
+
+var blancas = function(){
+    console.log('EN BLANCAS')
+    casillasBlancas = $('.blancas')
+    casillasNegras = $('.negras')
+    casillasRojas = $('.rojas')
+
+    if ($('.casillas').hasClass("blancas")) {
+        console.log("cambiando blancas por negras")
+        for (c1 of casillasBlancas) {
+            $(c1).removeClass('blancas')
+            $(c1).addClass('negras')
+        }
+        for(c5 of casillasRojas){
+            $(c5).removeClass('rojas');
+            $(c5).addClass("azules");
+        }
+
+        for (c2 of casillasNegras) {
+            $(c2).removeClass('negras')
+            $(c2).addClass('azules')
+        }
+    } else  if($('.casillas').hasClass("negras")) {
+        console.log("cambiando negras por rojas")
+        for (c3 of casillasNegras) {
+            $(c3).removeClass('negras')
+            $(c3).addClass('rojas')
+        }
+        for (c4 of casillasRojas) {
+            $(c4).removeClass('rojas')
+            $(c4).addClass('azules')
+        }
+    }
+
+    
+}
+
+function negras() { //Las celdas NEGRAS=ROJAS
+    console.log('EN NEGRAS')
+    casillasNegras = $('.negras')
+
+    for (c2 of casillasNegras) {
+        $(c2).removeClass('negras')
+        $(c2).addClass('rojas')
+    }
+    
+
+}//fin
