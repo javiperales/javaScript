@@ -1,0 +1,22 @@
+html,body{
+    height: 100%;
+    width:  100%;
+    background-color: lightblue;
+}
+#contenedor{
+    margin: auto;
+    width: 400px;
+    background-color: black;
+}
+.cubo{
+    width: 50px;
+    height: 50px;
+    float: left;
+    background-color: red;
+    margin: 2px;
+    border: 2px solid black;
+    text-align: center;
+}
+.cubo:hover{
+  background-color: orange;
+}
